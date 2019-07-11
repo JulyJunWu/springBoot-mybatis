@@ -1,0 +1,28 @@
+server:
+  port: 8888
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+
+config:
+  master:
+    url: jdbc:mysql://localhost:3306/root?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  readSize: 2
+  slave2:
+    url: jdbc:mysql://localhost:3306/sys?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  slave3:
+      url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  config-location: classpath:sqlConfig.xml
+  mapperScanPackage: com.ws.dao
